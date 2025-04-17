@@ -1,72 +1,95 @@
+# 🦠 COVID-19 Global SQL Analysis
 
-COVID-19 Global SQL Analysis
+## 📌 Project Background
+This project focuses on analyzing COVID-19 data across countries using two datasets: **CovidDeaths** and **CovidVaccinations**. The goal is to uncover insights about infection trends, death rates, and vaccination progress, while also understanding how different countries responded during key periods of the pandemic. The datasets contain hundreds of thousands of records covering countries from all continents. By analyzing these datasets, we aim to create data-driven conclusions that can inform public health understanding and policy decisions.
 
-Project Background
-This project focuses on analyzing COVID-19 data across countries using two datasets: CovidDeaths and CovidVaccinations. The goal is to uncover insights about infection trends, death rates, and vaccination progress, while also understanding how different countries responded during key periods of the pandemic. The datasets contain hundreds of thousands of records covering countries from all continents. By analyzing these datasets, we aim to create data-driven conclusions that can inform public health understanding and policy decisions.
+---
 
-Important terminology:
+## 📖 Important Terminology
 
-Total Cases: The cumulative number of confirmed COVID-19 infections in a country.
-Total Deaths: The cumulative number of confirmed COVID-19 related deaths.
-Death Percentage: The likelihood of dying if infected, calculated as (total deaths / total cases) * 100.
-Infection Rate: The percentage of a country’s population infected.
-Rolling Vaccinations: The cumulative number of people vaccinated over time.
+- 🧮 **Total Cases**: Cumulative number of confirmed COVID-19 cases.  
+- 💀 **Total Deaths**: Cumulative number of COVID-19 related deaths.  
+- 📉 **Death Percentage**: `(total_deaths / total_cases) * 100`  
+- 🧬 **Infection Rate**: `(total_cases / population) * 100`  
+- 💉 **Rolling Vaccinations**: Cumulative vaccinations over time using SQL window functions.
 
-Executive Summary
-The analysis is based on COVID data across 219 locations. Using SQL, key metrics such as infection rate, death percentage, and vaccination coverage were computed and ranked. The United States, India, and Brazil emerged as countries with the highest total case and death counts. However, smaller nations like Andorra and Montenegro showed significantly higher infection percentages relative to population. Vaccination progress was tracked using rolling sums, showing China and the U.S. as leaders in total administered doses. Global death percentage was calculated to be approximately 2.12%.
+---
 
-Summary of Insights
+## 📊 Executive Summary
+This analysis covers **219 global locations** using SQL queries to extract metrics such as infection rate, death percentage, and vaccination progress. The United States, India, and Brazil reported the highest absolute cases and deaths, while smaller nations like Andorra and Montenegro exhibited higher infection percentages relative to population. Vaccination efforts were led by China and the U.S. with over 200M doses each. SQL was used to prepare the dataset for insights, and Tableau was suggested for future dashboard development.
 
-Top Countries by Total Cases:
-- United States: 32.3 million+
-- India: 19.1 million+
-- Brazil: 14.6 million+
-- France: 5.6 million+
-- Turkey: 4.8 million+
+---
 
-Top Countries by Total Deaths:
-- United States: 576,000+
-- Brazil: 403,000+
-- Mexico: 216,000+
-- India: 211,000+
-- United Kingdom: 127,000+
+## 📈 Summary of Insights
 
-Infection Rate (% of population):
-- Andorra: 17.13%
-- Montenegro: 15.51%
-- Czechia: 15.23%
-- San Marino: 14.93%
-- Slovenia: 11.56%
+### 🦠 Top Countries by Total Cases:
+- 🇺🇸 United States: 32.3M+
+- 🇮🇳 India: 19.1M+
+- 🇧🇷 Brazil: 14.6M+
+- 🇫🇷 France: 5.6M+
+- 🇹🇷 Turkey: 4.8M+
 
-Vaccination Leaders:
-- China: 265M+ doses
-- United States: 240M+ doses
+### 💀 Top Countries by Total Deaths:
+- 🇺🇸 United States: 576K+
+- 🇧🇷 Brazil: 403K+
+- 🇲🇽 Mexico: 216K+
+- 🇮🇳 India: 211K+
+- 🇬🇧 United Kingdom: 127K+
 
-Global Death Rate:
-- Approximately 2.12% of infected individuals died based on total recorded cases and deaths.
+### 🧬 Highest Infection Rate (% of population):
+- 🇦🇩 Andorra: 17.13%
+- 🇲🇪 Montenegro: 15.51%
+- 🇨🇿 Czechia: 15.23%
+- 🇸🇲 San Marino: 14.93%
+- 🇸🇮 Slovenia: 11.56%
 
-Recommendations
-Based on these findings, the following recommendations can be made:
+### 💉 Top Vaccination Totals:
+- 🇨🇳 China: 265M+ doses
+- 🇺🇸 United States: 240M+ doses
 
-Strengthen Public Health Infrastructure: Countries with high death percentages may benefit from better hospital resources and early treatment strategies.
+### 📉 Global Death Rate:
+- ~2.12% of infected individuals died globally
 
-Targeted Vaccination Campaigns: Smaller nations with high infection rates should be prioritized for vaccination and health education programs.
+---
 
-Invest in Data Collection and Reporting: Standardized and timely data collection helps in accurate modeling and quicker decision-making.
+## ✅ Recommendations
 
-Build Dashboard Interfaces: The SQL views and queries can feed into visualization tools like Tableau and Power BI for dynamic public-facing dashboards.
+- 🏥 **Strengthen Public Health Infrastructure**: Improve emergency response and hospital readiness.
+- 🧭 **Targeted Vaccination Campaigns**: Prioritize highly infected smaller nations.
+- 📊 **Invest in Real-Time Dashboards**: Use Tableau or Power BI with SQL views for live insights.
+- 🌐 **Continue Global Collaboration**: Emphasize data sharing, transparency, and international coordination.
 
-Continue Global Collaboration: The virus’s spread across countries reinforces the importance of international collaboration in healthcare and research.
+---
 
-Assumptions and Caveats
-- The death percentages assume accuracy in reporting of total cases and deaths. Undercounting or delays in reporting can affect this.
-- Vaccination figures do not distinguish between first and second doses unless explicitly specified.
-- Population data is assumed static and is not adjusted for birth/death rate during the period analyzed.
-- Aggregate regions like “World” and “Europe” were excluded from ranked lists to focus only on individual countries.
+## ⚠️ Assumptions and Caveats
 
-Technical Project Information
-The original datasets are from Our World in Data (https://ourworldindata.org/coronavirus), containing COVID statistics for 219 locations. SQL was used to filter, group, join, and compute metrics such as rolling sums and percentages. Temporary tables, common table expressions (CTEs), and views were used to organize logic for analysis and BI dashboard integration.
+- Some countries may underreport or delay data, affecting accuracy.
+- Vaccination data may not distinguish between first and second doses.
+- Population is treated as static across the dataset timeline.
+- Aggregated regions like "World", "Europe", etc. were excluded from insights.
 
-The full SQL code can be found in the file: Covid_Global_Analysis.sql.
+---
 
-For more about my projects and data journey, visit my Portfolio.
+## 🛠️ Technical Project Information
+
+- 🔗 **Source**: [Our World in Data](https://ourworldindata.org/coronavirus)  
+- 🗃️ **Data**: `CovidDeaths.csv`, `CovidVaccinations.csv`  
+- 🧠 **Tech Used**: SQL (CTEs, Joins, Temp Tables, Views), Tableau  
+- 📂 **Output**: Insights, summary tables, and clean views for visualization
+
+---
+
+## 🚀 How to Use
+
+1. Clone the repo  
+2. Run the SQL script `Covid_Global_Analysis.sql` in your DBMS  
+3. Connect Tableau to your SQL views or use exported CSVs  
+4. Build the dashboard (filters, KPIs, maps, line charts)
+
+---
+
+## 🌍 About Me
+
+I'm a data analyst passionate about storytelling with data. This project reflects my interest in real-world impact through clean SQL logic and engaging visualization.
+
+👉 Visit my **[Portfolio](https://github.com/Ashutosh22d)** to see more.
